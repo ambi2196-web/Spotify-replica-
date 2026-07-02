@@ -39,7 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# large binary assets — host via CDN / object storage, not git
-/public/audio/
-/public/images/
