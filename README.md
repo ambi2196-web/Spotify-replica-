@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Resonance — A Spotify Product Strategy Thesis, Made Interactive
 
-## Getting Started
+Resonance is an interactive MVP built to prove a product thesis: Spotify should invest in platform-owned, royalty-clean audio content to structurally reduce its dependency on label royalties. Rather than write a case study, this project builds the product itself — four distinct listening surfaces that demonstrate what a royalty-independent Spotify could look like as a user experience, not just a slide deck.
 
-First, run the development server:
+Built as part of a Product Management case study exploring Spotify's long-term strategic options.
+
+---
+
+## The Four Segments
+
+| Segment | What it demonstrates |
+|---|---|
+| **Music** | System 1 listening baseline — familiar grid playback, the current Spotify model, the cost structure this thesis is designed to escape |
+| **Podcast** | Long-form audio, System 1 — Spotify already owns Anchor and distributes creator audio; this surface shows the existing wedge |
+| **Canvas** | Original royalty-clean audio + an AI composition engine — the thesis in action. Users select a cognitive state (Focus / Energy / Calm / Wind Down) and play catalog audio, or use the Composition Engine to generate a track from a prompt. No label. No royalty clock ticking. |
+| **Discover** | Hook-to-depth discovery engine for creator-owned audio — the thesis at the top of the funnel. Every card plays a 30-second preview; the platform then asks "Worth going deeper?" Designed to surface independent and platform-owned content without relying on algorithmic promotion of label-owned tracks. |
+
+---
+
+## Tech Stack
+
+- **Next.js 16** (App Router, Turbopack, React 19)
+- **TypeScript**
+- **Tailwind CSS 4** (CSS custom properties, `@theme inline`)
+- **Zustand** — global player state, discovery mode
+- **HTML5 Audio API** — single `<audio>` element persisted in the layout
+
+---
+
+## Running Locally
 
 ```bash
+git clone <repo-url>
+cd resonance-spotify
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> **Note on assets:** Audio files (`/public/audio/`) and cover images (`/public/images/`) are gitignored — they are large binary files (~1 GB combined) not suited for version control. To run the app with full playback, add your own royalty-free audio files matching the filenames in `public/data/catalog.json`. Sources used in development: [Pixabay Music](https://pixabay.com/music/), [Unsplash](https://unsplash.com/) (images), and the [Seen and Unseen](https://seenunseen.in/) podcast (Amit Varma).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Live Demo
 
-To learn more about Next.js, take a look at the following resources:
+_Link to be added after Phase 4 deployment._
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Author
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Ashutosh Dhote** — Senior Technical Recruiter transitioning to Product Management.
+This project is part of a broader PM case study portfolio exploring product strategy, user experience, and the economics of audio streaming platforms.
