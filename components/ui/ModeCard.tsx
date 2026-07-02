@@ -21,10 +21,9 @@ export default function ModeCard({
   return (
     <Link
       href={href}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-xl p-6 transition-transform duration-200 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+      className="group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-xl p-5 transition-transform duration-200 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand md:min-h-[300px] md:p-6"
       style={{
         background: `linear-gradient(135deg, ${gradientFrom}, ${gradientTo})`,
-        minHeight: "200px",
       }}
     >
       {/* Background noise texture overlay for depth */}
@@ -37,14 +36,14 @@ export default function ModeCard({
       />
 
       {/* Icon */}
-      <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-lg bg-white/20 text-white">
+      <div className="relative z-10 flex h-11 w-11 items-center justify-center rounded-lg bg-white/20 text-white md:h-12 md:w-12">
         {icon}
       </div>
 
       {/* Text */}
       <div className="relative z-10 mt-auto">
-        <h2 className="mb-1 text-2xl font-bold text-white">{title}</h2>
-        <p className="text-sm font-medium text-white/75">{tagline}</p>
+        <h2 className="mb-1 text-xl font-bold text-white md:text-2xl">{title}</h2>
+        <p className="text-xs font-medium text-white/75 md:text-sm">{tagline}</p>
       </div>
 
       {/* Hover overlay */}

@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
 import PlayerBar from "@/components/layout/PlayerBar";
+import BottomNav from "@/components/layout/BottomNav";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -11,7 +12,7 @@ const geist = Geist({
 
 export const metadata: Metadata = {
   title: "Resonance",
-  description: "Your music, your way.",
+  description: "A product strategy thesis for Spotify's audio future.",
 };
 
 export default function RootLayout({
@@ -27,6 +28,7 @@ export default function RootLayout({
           </main>
         </div>
         <PlayerBar />
+        <BottomNav />
       </body>
     </html>
   );

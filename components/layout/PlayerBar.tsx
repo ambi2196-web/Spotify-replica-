@@ -78,21 +78,6 @@ export default function PlayerBar() {
     );
   }, [currentItem?.id]);
 
-  // Hook mechanic: pause at 30s when in discovery hook mode
-  useEffect(() => {
-    if (
-      discoveryMode === "hook" &&
-      currentTime >= 30 &&
-      isPlaying &&
-      !hookTriggeredRef.current
-    ) {
-      hookTriggeredRef.current = true;
-      if (audioRef.current) audioRef.current.pause();
-      togglePlay(); // isPlaying is true → toggles to false
-      setShowHookBanner(true);
-    }
-  }, [currentTime, discoveryMode, isPlaying, togglePlay]);
-
   // Sync play / pause
   useEffect(() => {
     const audio = audioRef.current;
@@ -116,13 +101,29 @@ export default function PlayerBar() {
     }
   }, [currentTime]);
 
+  // Hook mechanic: pause at 30s when in discovery hook mode
+  useEffect(() => {
+    if (
+      discoveryMode === "hook" &&
+      currentTime >= 30 &&
+      isPlaying &&
+      !hookTriggeredRef.current
+    ) {
+      hookTriggeredRef.current = true;
+      if (audioRef.current) audioRef.current.pause();
+      togglePlay();
+      setShowHookBanner(true);
+    }
+  }, [currentTime, discoveryMode, isPlaying, togglePlay]);
+
   const progressPct = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
     <>
-      {/* Hook-to-depth banner — floats above the player bar */}
+      {/* Hook-to-depth banner — floats above the player bar.
+          On mobile: account for PlayerBar (64px) + BottomNav (~56px). */}
       {showHookBanner && (
-        <div className="fixed inset-x-0 bottom-[90px] z-50 flex items-center justify-between border-t border-[#F2994A]/30 bg-surface-base/95 px-6 py-3 backdrop-blur">
+        <div className="fixed inset-x-0 bottom-[124px] z-50 flex items-center justify-between border-t border-[#F2994A]/30 bg-surface-base/95 px-4 py-3 backdrop-blur md:bottom-[90px] md:px-6">
           <div>
             <p className="text-sm font-semibold text-text-primary">
               Worth going deeper?
@@ -143,7 +144,7 @@ export default function PlayerBar() {
               onClick={() => {
                 setShowHookBanner(false);
                 setDiscoveryMode("depth");
-                togglePlay(); // isPlaying is false → toggles to true, resumes from 30s
+                togglePlay();
               }}
               className="rounded-full bg-[#F2994A] px-4 py-1.5 text-sm font-semibold text-black transition-colors hover:bg-[#e8883a]"
             >
@@ -153,131 +154,145 @@ export default function PlayerBar() {
         </div>
       )}
 
-      <footer className="flex h-[90px] flex-shrink-0 items-center justify-between border-t border-surface-3 bg-surface-2 px-4">
+      {/* Player bar — compact on mobile, full on md+ */}
+      <footer className="flex h-16 flex-shrink-0 items-center border-t border-surface-3 bg-surface-2 px-3 md:h-[90px] md:justify-between md:px-4">
         <audio ref={audioRef} preload="metadata" />
 
-      {/* Left: track info */}
-      <div className="flex w-[30%] items-center gap-3">
-        <div
-          className="h-14 w-14 flex-shrink-0 rounded bg-surface-3 bg-cover bg-center"
-          style={
-            currentItem
-              ? { backgroundImage: `url(${currentItem.coverArt})` }
-              : undefined
-          }
-        />
-        <div className="min-w-0">
-          <p className="truncate text-sm font-medium text-text-primary">
-            {currentItem?.title ?? "Nothing playing"}
-          </p>
-          <p className="truncate text-xs text-text-secondary">
-            {currentItem?.creator ?? "—"}
-          </p>
+        {/* Track info — flex-1 on mobile, fixed 30% on desktop */}
+        <div className="flex flex-1 items-center gap-2 md:w-[30%] md:flex-none md:gap-3">
+          <div
+            className="h-10 w-10 flex-shrink-0 rounded bg-surface-3 bg-cover bg-center md:h-14 md:w-14"
+            style={
+              currentItem
+                ? { backgroundImage: `url(${currentItem.coverArt})` }
+                : undefined
+            }
+          />
+          <div className="min-w-0">
+            <p className="truncate text-sm font-medium text-text-primary">
+              {currentItem?.title ?? "Nothing playing"}
+            </p>
+            <p className="truncate text-xs text-text-secondary">
+              {currentItem?.creator ?? "—"}
+            </p>
+          </div>
+          {/* Heart — desktop only */}
+          <button
+            aria-label="Like"
+            className="ml-2 hidden flex-shrink-0 text-text-muted transition-colors hover:text-text-primary md:block"
+          >
+            <HeartIcon size={18} />
+          </button>
         </div>
-        <button
-          aria-label="Like"
-          className="ml-2 flex-shrink-0 text-text-muted transition-colors hover:text-text-primary"
-        >
-          <HeartIcon size={18} />
-        </button>
-      </div>
 
-      {/* Center: controls + seekbar */}
-      <div className="flex w-[40%] flex-col items-center gap-2">
-        <div className="flex items-center gap-5">
-          <button
-            aria-label="Shuffle"
-            className="text-text-secondary transition-colors hover:text-text-primary"
-          >
-            <ShuffleIcon size={18} />
-          </button>
-          <button
-            aria-label="Previous"
-            onClick={playPrev}
-            disabled={!currentItem}
-            className="text-text-secondary transition-colors hover:text-text-primary disabled:opacity-40"
-          >
-            <SkipBackIcon size={20} />
-          </button>
+        {/* Mobile-only: play / pause button */}
+        <div className="flex items-center pr-1 md:hidden">
           <button
             aria-label={isPlaying ? "Pause" : "Play"}
             onClick={togglePlay}
             disabled={!currentItem}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-text-primary text-surface-base transition-transform hover:scale-105 disabled:opacity-40"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-text-primary text-surface-base transition-transform hover:scale-105 disabled:opacity-40"
           >
-            {isPlaying ? <PauseIcon size={18} /> : <PlayIcon size={18} />}
+            {isPlaying ? <PauseIcon size={20} /> : <PlayIcon size={20} />}
           </button>
+        </div>
+
+        {/* Desktop center: controls + seekbar */}
+        <div className="hidden w-[40%] flex-col items-center gap-2 md:flex">
+          <div className="flex items-center gap-5">
+            <button
+              aria-label="Shuffle"
+              className="text-text-secondary transition-colors hover:text-text-primary"
+            >
+              <ShuffleIcon size={18} />
+            </button>
+            <button
+              aria-label="Previous"
+              onClick={playPrev}
+              disabled={!currentItem}
+              className="text-text-secondary transition-colors hover:text-text-primary disabled:opacity-40"
+            >
+              <SkipBackIcon size={20} />
+            </button>
+            <button
+              aria-label={isPlaying ? "Pause" : "Play"}
+              onClick={togglePlay}
+              disabled={!currentItem}
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-text-primary text-surface-base transition-transform hover:scale-105 disabled:opacity-40"
+            >
+              {isPlaying ? <PauseIcon size={18} /> : <PlayIcon size={18} />}
+            </button>
+            <button
+              aria-label="Next"
+              onClick={playNext}
+              disabled={!currentItem}
+              className="text-text-secondary transition-colors hover:text-text-primary disabled:opacity-40"
+            >
+              <SkipForwardIcon size={20} />
+            </button>
+            <button
+              aria-label="Repeat"
+              className="text-text-secondary transition-colors hover:text-text-primary"
+            >
+              <RepeatIcon size={18} />
+            </button>
+          </div>
+
+          {/* Seekbar */}
+          <div className="flex w-full max-w-[420px] items-center gap-2">
+            <span className="w-10 text-right text-xs tabular-nums text-text-muted">
+              {formatDuration(Math.floor(currentTime))}
+            </span>
+            <input
+              type="range"
+              className="seek-bar flex-1"
+              min={0}
+              max={Math.floor(duration) || 100}
+              step={1}
+              value={Math.floor(currentTime)}
+              style={
+                { "--progress-pct": `${progressPct}%` } as React.CSSProperties
+              }
+              onMouseDown={() => {
+                isSeekingRef.current = true;
+              }}
+              onChange={(e) => {
+                seek(Number(e.target.value));
+              }}
+              onMouseUp={(e) => {
+                const t = Number(e.currentTarget.value);
+                if (audioRef.current) audioRef.current.currentTime = t;
+                isSeekingRef.current = false;
+              }}
+            />
+            <span className="w-10 text-xs tabular-nums text-text-muted">
+              {duration ? formatDuration(Math.floor(duration)) : "--:--"}
+            </span>
+          </div>
+        </div>
+
+        {/* Desktop right: volume */}
+        <div className="hidden w-[30%] items-center justify-end gap-2 md:flex">
           <button
-            aria-label="Next"
-            onClick={playNext}
-            disabled={!currentItem}
-            className="text-text-secondary transition-colors hover:text-text-primary disabled:opacity-40"
-          >
-            <SkipForwardIcon size={20} />
-          </button>
-          <button
-            aria-label="Repeat"
+            aria-label="Volume"
             className="text-text-secondary transition-colors hover:text-text-primary"
           >
-            <RepeatIcon size={18} />
+            <VolumeIcon size={18} />
           </button>
-        </div>
-
-        {/* Seekbar */}
-        <div className="flex w-full max-w-[420px] items-center gap-2">
-          <span className="w-10 text-right text-xs tabular-nums text-text-muted">
-            {formatDuration(Math.floor(currentTime))}
-          </span>
           <input
             type="range"
-            className="seek-bar flex-1"
+            className="volume-bar w-24"
             min={0}
-            max={Math.floor(duration) || 100}
-            step={1}
-            value={Math.floor(currentTime)}
+            max={1}
+            step={0.01}
+            value={volume}
             style={
-              { "--progress-pct": `${progressPct}%` } as React.CSSProperties
+              { "--progress-pct": `${volume * 100}%` } as React.CSSProperties
             }
-            onMouseDown={() => {
-              isSeekingRef.current = true;
-            }}
-            onChange={(e) => {
-              seek(Number(e.target.value));
-            }}
-            onMouseUp={(e) => {
-              const t = Number(e.currentTarget.value);
-              if (audioRef.current) audioRef.current.currentTime = t;
-              isSeekingRef.current = false;
-            }}
+            onChange={(e) => setVolume(Number(e.target.value))}
           />
-          <span className="w-10 text-xs tabular-nums text-text-muted">
-            {duration ? formatDuration(Math.floor(duration)) : "--:--"}
-          </span>
         </div>
-      </div>
-
-      {/* Right: volume */}
-      <div className="flex w-[30%] items-center justify-end gap-2">
-        <button
-          aria-label="Volume"
-          className="text-text-secondary transition-colors hover:text-text-primary"
-        >
-          <VolumeIcon size={18} />
-        </button>
-        <input
-          type="range"
-          className="volume-bar w-24"
-          min={0}
-          max={1}
-          step={0.01}
-          value={volume}
-          style={
-            { "--progress-pct": `${volume * 100}%` } as React.CSSProperties
-          }
-          onChange={(e) => setVolume(Number(e.target.value))}
-        />
-      </div>
-    </footer>
+      </footer>
     </>
   );
 }

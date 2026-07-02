@@ -19,7 +19,6 @@ const navItems = [
   { href: "/discover", label: "Discover", Icon: CompassIcon },
 ] as const;
 
-// Each segment's accent color when active
 const SEGMENT_ACCENT: Record<string, string> = {
   "/": "#1DB954",
   "/music": "#1DB954",
@@ -56,7 +55,8 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="flex w-60 flex-shrink-0 flex-col bg-surface-base overflow-y-auto">
+    // Hidden on mobile — replaced by BottomNav
+    <aside className="hidden md:flex w-60 flex-shrink-0 flex-col bg-surface-base overflow-y-auto">
       {/* Logo */}
       <div className="flex items-center gap-2.5 px-6 py-7">
         <ResonanceLogoIcon size={28} className="text-brand" />
