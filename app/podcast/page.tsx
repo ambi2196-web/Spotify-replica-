@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import { getBySegment } from "@/lib/catalog";
 import PodcastList from "@/components/ui/PodcastList";
+
+export const metadata: Metadata = {
+  title: "Podcast — Resonance",
+};
 
 export default async function PodcastPage() {
   const items = await getBySegment("podcast");

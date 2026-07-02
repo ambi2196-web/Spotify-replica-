@@ -4,6 +4,8 @@ Resonance is an interactive MVP built to prove a product thesis: Spotify should 
 
 Built as part of a Product Management case study exploring Spotify's long-term strategic options.
 
+**[Live Demo →](https://spotify-replica-black.vercel.app/)** · Case Study Deck: [link]
+
 ---
 
 ## The Four Segments
@@ -38,13 +40,13 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-> **Note on assets:** Audio files (`/public/audio/`) and cover images (`/public/images/`) are gitignored — they are large binary files (~1 GB combined) not suited for version control. To run the app with full playback, add your own royalty-free audio files matching the filenames in `public/data/catalog.json`. Sources used in development: [Pixabay Music](https://pixabay.com/music/), [Unsplash](https://unsplash.com/) (images), and the [Seen and Unseen](https://seenunseen.in/) podcast (Amit Varma).
+> **Note on assets:** Audio files (`/public/audio/`) and cover images (`/public/images/`) are royalty-free binaries tracked in the repo but not suitable for redistribution. Sources used: [Pixabay Music](https://pixabay.com/music/), [Unsplash](https://unsplash.com/) (images), and the [Seen and Unseen](https://seenunseen.in/) podcast (Amit Varma).
 
 ---
 
 ## Live Demo
 
-_Link to be added after Phase 4 deployment._
+[https://spotify-replica-black.vercel.app/](https://spotify-replica-black.vercel.app/)
 
 ---
 

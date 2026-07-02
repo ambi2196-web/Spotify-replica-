@@ -107,6 +107,50 @@
       "description": "Wind down with peaceful ambient sound."
     },
     {
+      "id": "c4",
+      "segment": "canvas",
+      "title": "Deep Work Session",
+      "creator": "Canvas Studio",
+      "coverArt": "/images/cover-canvas-2.jpg",
+      "audioSrc": "/audio/canvas-acoustic-spring.mp3",
+      "durationSec": 210,
+      "tags": ["focus"],
+      "description": "Minimal, steady tones engineered for sustained cognitive output."
+    },
+    {
+      "id": "c5",
+      "segment": "canvas",
+      "title": "Flow State",
+      "creator": "Canvas Studio",
+      "coverArt": "/images/cover-canvas-3.jpg",
+      "audioSrc": "/audio/canvas-acoustic-spring.mp3",
+      "durationSec": 225,
+      "tags": ["focus"],
+      "description": "Slip into uninterrupted concentration with layered ambient texture."
+    },
+    {
+      "id": "c6",
+      "segment": "canvas",
+      "title": "Rise",
+      "creator": "Canvas Studio",
+      "coverArt": "/images/cover-music-3.jpg",
+      "audioSrc": "/audio/music-powerful-dramatic.mp3",
+      "durationSec": 195,
+      "tags": ["energy"],
+      "description": "High-intensity audio built to ignite momentum and drive."
+    },
+    {
+      "id": "c7",
+      "segment": "canvas",
+      "title": "Power Hour",
+      "creator": "Canvas Studio",
+      "coverArt": "/images/cover-music-4.jpg",
+      "audioSrc": "/audio/music-powerful-dramatic.mp3",
+      "durationSec": 215,
+      "tags": ["energy"],
+      "description": "Sustained energy for workouts, creative sprints, and peak performance."
+    },
+    {
       "id": "d1",
       "segment": "discover",
       "title": "The Daily Brief — AI Unpacked",
@@ -141,6 +185,54 @@
       "hookSrc": "/audio/podcast-seen-unseen-e445.mp3",
       "description": "Why cities look the way they do — and what it costs us.",
       "tags": ["history", "culture"]
+    },
+    {
+      "id": "d4",
+      "segment": "discover",
+      "title": "The Microbiome Revolution",
+      "creator": "Resonance Originals",
+      "coverArt": "/images/cover-discover-1.jpg",
+      "audioSrc": "/audio/podcast-seen-unseen-e446.mp3",
+      "durationSec": 780,
+      "hookSrc": "/audio/podcast-seen-unseen-e446.mp3",
+      "description": "How 39 trillion microbes in your gut are reshaping medicine, mental health, and what we eat.",
+      "tags": ["science"]
+    },
+    {
+      "id": "d5",
+      "segment": "discover",
+      "title": "The Coalition Paradox",
+      "creator": "Resonance Originals",
+      "coverArt": "/images/cover-discover-2.jpg",
+      "audioSrc": "/audio/discover-no-copyright.mp3",
+      "durationSec": 660,
+      "hookSrc": "/audio/discover-no-copyright.mp3",
+      "description": "Why coalition governments are more stable than they look — and what India's 2024 result actually tells us.",
+      "tags": ["politics"]
+    },
+    {
+      "id": "d6",
+      "segment": "discover",
+      "title": "The Silk Road's Last Century",
+      "creator": "Resonance Originals",
+      "coverArt": "/images/cover-podcast-1.jpg",
+      "audioSrc": "/audio/podcast-seen-unseen-e445.mp3",
+      "durationSec": 900,
+      "hookSrc": "/audio/podcast-seen-unseen-e445.mp3",
+      "description": "The trade routes that built the modern world — and the geopolitical echo they left behind.",
+      "tags": ["history"]
+    },
+    {
+      "id": "d7",
+      "segment": "discover",
+      "title": "Why Indian Classical Music Almost Died",
+      "creator": "Resonance Originals",
+      "coverArt": "/images/cover-podcast-2.jpg",
+      "audioSrc": "/audio/podcast-seen-unseen-e444.mp3",
+      "durationSec": 840,
+      "hookSrc": "/audio/podcast-seen-unseen-e444.mp3",
+      "description": "The near-extinction and unexpected revival of a thousand-year musical tradition.",
+      "tags": ["culture"]
     }
   ]
 }

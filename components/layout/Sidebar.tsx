@@ -28,6 +28,30 @@ const SEGMENT_ACCENT: Record<string, string> = {
   "/discover": "#F2994A",
 };
 
+const RECENTLY_PLAYED = [
+  {
+    id: "m1",
+    title: "Carnaval",
+    segment: "Music",
+    coverArt: "/images/cover-music-1.jpg",
+    href: "/music",
+  },
+  {
+    id: "d1",
+    title: "The Daily Brief — AI Unpacked",
+    segment: "Discover",
+    coverArt: "/images/cover-discover-1.jpg",
+    href: "/discover",
+  },
+  {
+    id: "c4",
+    title: "Deep Work Session",
+    segment: "Canvas",
+    coverArt: "/images/cover-canvas-2.jpg",
+    href: "/canvas",
+  },
+] as const;
+
 export default function Sidebar() {
   const pathname = usePathname();
 
@@ -71,14 +95,31 @@ export default function Sidebar() {
       {/* Divider */}
       <div className="mx-6 my-4 border-t border-surface-3" />
 
-      {/* Library placeholder */}
-      <div className="px-6">
-        <p className="mb-3 text-xs font-bold uppercase tracking-widest text-text-muted">
+      {/* Recently played */}
+      <div className="px-4">
+        <p className="mb-3 px-2 text-xs font-bold uppercase tracking-widest text-text-muted">
           Your Library
         </p>
-        <p className="text-sm text-text-muted">
-          Sign in to see your saved content.
-        </p>
+        <div className="flex flex-col gap-0.5">
+          {RECENTLY_PLAYED.map((item) => (
+            <Link
+              key={item.id}
+              href={item.href}
+              className="group flex items-center gap-3 rounded-md px-2 py-1.5 transition-colors hover:bg-surface-3"
+            >
+              <div
+                className="h-10 w-10 flex-shrink-0 rounded bg-surface-3 bg-cover bg-center"
+                style={{ backgroundImage: `url(${item.coverArt})` }}
+              />
+              <div className="min-w-0">
+                <p className="truncate text-xs font-medium text-text-primary">
+                  {item.title}
+                </p>
+                <p className="text-[10px] text-text-muted">{item.segment}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
 
       {/* Bottom spacer */}

@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import { getBySegment } from "@/lib/catalog";
 import MusicGrid from "@/components/ui/MusicGrid";
+
+export const metadata: Metadata = {
+  title: "Music — Resonance",
+};
 
 export default async function MusicPage() {
   const items = await getBySegment("music");

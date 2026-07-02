@@ -52,21 +52,28 @@ export default function GatewayPage() {
   const greeting = useGreeting();
 
   return (
-    <div className="min-h-full bg-gradient-to-b from-surface-3 to-surface-1 px-6 py-10">
-      <header className="mb-10">
-        <p className="mb-1 text-sm font-medium text-text-secondary">
-          {greeting}
-        </p>
-        <h1 className="text-3xl font-bold text-text-primary">
-          What are you in the mood for?
-        </h1>
-      </header>
+    <>
+      <title>Resonance — A Spotify Product Thesis</title>
+      <div className="min-h-full bg-gradient-to-b from-surface-3 to-surface-1 px-6 py-10">
+        <header className="mb-10">
+          <p className="mb-1 text-sm font-medium text-text-secondary">
+            {greeting}
+          </p>
+          <h1 className="text-3xl font-bold text-text-primary">
+            What are you in the mood for?
+          </h1>
+          <p className="mt-2 text-sm italic text-text-muted">
+            A product strategy thesis for Spotify's audio future — built to
+            prove that platform-owned audio is the only durable margin lever.
+          </p>
+        </header>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {modes.map((mode) => (
-          <ModeCard key={mode.href} {...mode} />
-        ))}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {modes.map((mode) => (
+            <ModeCard key={mode.href} {...mode} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
