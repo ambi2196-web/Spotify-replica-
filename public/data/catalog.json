@@ -85,17 +85,6 @@
       "description": "First principles thinking applied to India's biggest challenges."
     },
     {
-      "id": "c1",
-      "segment": "canvas",
-      "title": "Wonders of the Earth",
-      "creator": "Canvas Studio",
-      "coverArt": "/images/cover-canvas-1.jpg",
-      "audioSrc": "/audio/canvas-wonders-of-earth.mp3",
-      "durationSec": 240,
-      "tags": ["focus"],
-      "description": "Deep focus ambient audio for sustained work."
-    },
-    {
       "id": "c2",
       "segment": "canvas",
       "title": "Acoustic Spring",
