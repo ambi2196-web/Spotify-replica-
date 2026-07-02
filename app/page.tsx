@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import ModeCard from "@/components/ui/ModeCard";
 import { MusicIcon, MicIcon, BrushIcon, CompassIcon } from "@/components/icons";
 
@@ -36,12 +39,23 @@ const modes = [
   },
 ] as const;
 
+function useGreeting(): string {
+  const [greeting, setGreeting] = useState("");
+  useEffect(() => {
+    const h = new Date().getHours();
+    setGreeting(h < 12 ? "Good morning" : h < 17 ? "Good afternoon" : "Good evening");
+  }, []);
+  return greeting;
+}
+
 export default function GatewayPage() {
+  const greeting = useGreeting();
+
   return (
     <div className="min-h-full bg-gradient-to-b from-surface-3 to-surface-1 px-6 py-10">
       <header className="mb-10">
         <p className="mb-1 text-sm font-medium text-text-secondary">
-          Good evening
+          {greeting}
         </p>
         <h1 className="text-3xl font-bold text-text-primary">
           What are you in the mood for?
