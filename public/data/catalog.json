@@ -1,412 +1,157 @@
-[
-  {
-    "id": "music-001",
-    "segment": "music",
-    "title": "Neon Drift",
-    "creator": "Aiko Nara",
-    "coverArt": "/images/music/neon-drift.jpg",
-    "audioSrc": "/audio/music/neon-drift.mp3",
-    "durationSec": 214
-  },
-  {
-    "id": "music-002",
-    "segment": "music",
-    "title": "Golden Hour",
-    "creator": "The Veldt",
-    "coverArt": "/images/music/golden-hour.jpg",
-    "audioSrc": "/audio/music/golden-hour.mp3",
-    "durationSec": 268
-  },
-  {
-    "id": "music-003",
-    "segment": "music",
-    "title": "Static & Blue",
-    "creator": "Kael Monroe",
-    "coverArt": "/images/music/static-and-blue.jpg",
-    "audioSrc": "/audio/music/static-and-blue.mp3",
-    "durationSec": 193
-  },
-  {
-    "id": "music-004",
-    "segment": "music",
-    "title": "Retrograde",
-    "creator": "LUNA",
-    "coverArt": "/images/music/retrograde.jpg",
-    "audioSrc": "/audio/music/retrograde.mp3",
-    "durationSec": 302
-  },
-  {
-    "id": "music-005",
-    "segment": "music",
-    "title": "Copper Sun",
-    "creator": "Osei Williams",
-    "coverArt": "/images/music/copper-sun.jpg",
-    "audioSrc": "/audio/music/copper-sun.mp3",
-    "durationSec": 245
-  },
-  {
-    "id": "music-006",
-    "segment": "music",
-    "title": "Midnight Archive",
-    "creator": "Priya Sen",
-    "coverArt": "/images/music/midnight-archive.jpg",
-    "audioSrc": "/audio/music/midnight-archive.mp3",
-    "durationSec": 331
-  },
-  {
-    "id": "music-007",
-    "segment": "music",
-    "title": "Tessellate",
-    "creator": "Nour & The Drift",
-    "coverArt": "/images/music/tessellate.jpg",
-    "audioSrc": "/audio/music/tessellate.mp3",
-    "durationSec": 189
-  },
-  {
-    "id": "music-008",
-    "segment": "music",
-    "title": "Weight of Bloom",
-    "creator": "Echo Fern",
-    "coverArt": "/images/music/weight-of-bloom.jpg",
-    "audioSrc": "/audio/music/weight-of-bloom.mp3",
-    "durationSec": 278
-  },
-  {
-    "id": "music-009",
-    "segment": "music",
-    "title": "Circuit Breaker",
-    "creator": "DVST",
-    "coverArt": "/images/music/circuit-breaker.jpg",
-    "audioSrc": "/audio/music/circuit-breaker.mp3",
-    "durationSec": 207
-  },
-  {
-    "id": "music-010",
-    "segment": "music",
-    "title": "Amber Signal",
-    "creator": "Fela & Mira",
-    "coverArt": "/images/music/amber-signal.jpg",
-    "audioSrc": "/audio/music/amber-signal.mp3",
-    "durationSec": 254
-  },
-  {
-    "id": "podcast-001",
-    "segment": "podcast",
-    "title": "Inside the Creator Economy",
-    "creator": "The Long Game",
-    "coverArt": "/images/podcast/the-long-game.jpg",
-    "audioSrc": "/audio/podcast/inside-the-creator-economy.mp3",
-    "durationSec": 2847,
-    "description": "How independent artists are rewriting the rules of distribution and ownership."
-  },
-  {
-    "id": "podcast-002",
-    "segment": "podcast",
-    "title": "When Algorithms Choose Art",
-    "creator": "The Long Game",
-    "coverArt": "/images/podcast/the-long-game.jpg",
-    "audioSrc": "/audio/podcast/when-algorithms-choose-art.mp3",
-    "durationSec": 3214,
-    "description": "The invisible hand of recommendation systems — and what we lose when we follow them."
-  },
-  {
-    "id": "podcast-003",
-    "segment": "podcast",
-    "title": "The Return of Long-Form",
-    "creator": "The Long Game",
-    "coverArt": "/images/podcast/the-long-game.jpg",
-    "audioSrc": "/audio/podcast/the-return-of-long-form.mp3",
-    "durationSec": 2601,
-    "description": "Why audiences are trading scroll sessions for slow, immersive storytelling."
-  },
-  {
-    "id": "podcast-004",
-    "segment": "podcast",
-    "title": "The Making of an Icon: 1994",
-    "creator": "Deep Cuts",
-    "coverArt": "/images/podcast/deep-cuts.jpg",
-    "audioSrc": "/audio/podcast/making-of-an-icon-1994.mp3",
-    "durationSec": 3512,
-    "description": "A definitive year: five albums that shaped the decade and why we're still talking about them."
-  },
-  {
-    "id": "podcast-005",
-    "segment": "podcast",
-    "title": "Underground to Mainstream",
-    "creator": "Deep Cuts",
-    "coverArt": "/images/podcast/deep-cuts.jpg",
-    "audioSrc": "/audio/podcast/underground-to-mainstream.mp3",
-    "durationSec": 2938,
-    "description": "The rise of subculture sounds — from vinyl-only releases to stadium anthems."
-  },
-  {
-    "id": "podcast-006",
-    "segment": "podcast",
-    "title": "Lost Albums of the 90s",
-    "creator": "Deep Cuts",
-    "coverArt": "/images/podcast/deep-cuts.jpg",
-    "audioSrc": "/audio/podcast/lost-albums-of-the-90s.mp3",
-    "durationSec": 4021,
-    "description": "Shelved, leaked, and forgotten: the records that never got their moment."
-  },
-  {
-    "id": "podcast-007",
-    "segment": "podcast",
-    "title": "How Streaming Changed Everything",
-    "creator": "Signal & Noise",
-    "coverArt": "/images/podcast/signal-and-noise.jpg",
-    "audioSrc": "/audio/podcast/how-streaming-changed-everything.mp3",
-    "durationSec": 3188,
-    "description": "A ten-year retrospective on what happened when music became infinite."
-  },
-  {
-    "id": "podcast-008",
-    "segment": "podcast",
-    "title": "The Attention Economy",
-    "creator": "Signal & Noise",
-    "coverArt": "/images/podcast/signal-and-noise.jpg",
-    "audioSrc": "/audio/podcast/the-attention-economy.mp3",
-    "durationSec": 2756,
-    "description": "You are the product. But what happens when you know that — and listen anyway?"
-  },
-  {
-    "id": "podcast-009",
-    "segment": "podcast",
-    "title": "Sonic Branding in the Age of AI",
-    "creator": "Signal & Noise",
-    "coverArt": "/images/podcast/signal-and-noise.jpg",
-    "audioSrc": "/audio/podcast/sonic-branding-in-the-age-of-ai.mp3",
-    "durationSec": 2499,
-    "description": "Brand identity through sound: why the 3-second audio logo is making a comeback."
-  },
-  {
-    "id": "canvas-001",
-    "segment": "canvas",
-    "title": "Deep Work Flow",
-    "creator": "Resonance Studio",
-    "coverArt": "/images/canvas/deep-work-flow.jpg",
-    "audioSrc": "/audio/canvas/deep-work-flow.mp3",
-    "durationSec": 3600,
-    "tags": ["focus"],
-    "description": "Layered tones and soft brown noise for sustained concentration."
-  },
-  {
-    "id": "canvas-002",
-    "segment": "canvas",
-    "title": "Morning Surge",
-    "creator": "Resonance Studio",
-    "coverArt": "/images/canvas/morning-surge.jpg",
-    "audioSrc": "/audio/canvas/morning-surge.mp3",
-    "durationSec": 1800,
-    "tags": ["energy"],
-    "description": "Upbeat pulse and building rhythms to kick-start your day."
-  },
-  {
-    "id": "canvas-003",
-    "segment": "canvas",
-    "title": "Rise Protocol",
-    "creator": "Resonance Studio",
-    "coverArt": "/images/canvas/rise-protocol.jpg",
-    "audioSrc": "/audio/canvas/rise-protocol.mp3",
-    "durationSec": 2400,
-    "tags": ["motivate"],
-    "description": "Cinematic swells designed to prime you before a high-stakes moment."
-  },
-  {
-    "id": "canvas-004",
-    "segment": "canvas",
-    "title": "Still Water",
-    "creator": "Resonance Studio",
-    "coverArt": "/images/canvas/still-water.jpg",
-    "audioSrc": "/audio/canvas/still-water.mp3",
-    "durationSec": 3600,
-    "tags": ["calm"],
-    "description": "Minimal pads and slow harmonic movement for stress recovery."
-  },
-  {
-    "id": "canvas-005",
-    "segment": "canvas",
-    "title": "Nocturne 3AM",
-    "creator": "Resonance Studio",
-    "coverArt": "/images/canvas/nocturne-3am.jpg",
-    "audioSrc": "/audio/canvas/nocturne-3am.mp3",
-    "durationSec": 4800,
-    "tags": ["wind-down"],
-    "description": "Low-frequency drones and delta-wave entrainment for deep sleep transition."
-  },
-  {
-    "id": "canvas-006",
-    "segment": "canvas",
-    "title": "Kinetic",
-    "creator": "Resonance Studio",
-    "coverArt": "/images/canvas/kinetic.jpg",
-    "audioSrc": "/audio/canvas/kinetic.mp3",
-    "durationSec": 2700,
-    "tags": ["energy", "motivate"],
-    "description": "High-tempo synth layers and punchy percussion for peak performance."
-  },
-  {
-    "id": "canvas-007",
-    "segment": "canvas",
-    "title": "Theta Drift",
-    "creator": "Resonance Studio",
-    "coverArt": "/images/canvas/theta-drift.jpg",
-    "audioSrc": "/audio/canvas/theta-drift.mp3",
-    "durationSec": 5400,
-    "tags": ["focus", "calm"],
-    "description": "Binaural theta-range tones woven into ambient textures for flow state access."
-  },
-  {
-    "id": "canvas-008",
-    "segment": "canvas",
-    "title": "Aphelion",
-    "creator": "Nour & The Drift",
-    "coverArt": "/images/canvas/aphelion.jpg",
-    "audioSrc": "/audio/canvas/aphelion.mp3",
-    "durationSec": 489,
-    "tags": [],
-    "description": "A composed instrumental built around a recurring five-note motif in open tuning."
-  },
-  {
-    "id": "canvas-009",
-    "segment": "canvas",
-    "title": "Liminal Space",
-    "creator": "Priya Sen",
-    "coverArt": "/images/canvas/liminal-space.jpg",
-    "audioSrc": "/audio/canvas/liminal-space.mp3",
-    "durationSec": 612,
-    "tags": [],
-    "description": "Prepared piano paired with generative synthesizer responses in a live studio setting."
-  },
-  {
-    "id": "canvas-010",
-    "segment": "canvas",
-    "title": "Afterglow",
-    "creator": "Echo Fern",
-    "coverArt": "/images/canvas/afterglow.jpg",
-    "audioSrc": "/audio/canvas/afterglow.mp3",
-    "durationSec": 387,
-    "tags": [],
-    "description": "Fingerpicked acoustic guitar over a bed of processed field recordings."
-  },
-  {
-    "id": "discover-001",
-    "segment": "discover",
-    "title": "Morning Edition: June 30",
-    "creator": "The Daily Brief",
-    "coverArt": "/images/discover/the-daily-brief.jpg",
-    "audioSrc": "/audio/discover/morning-edition-june-30.mp3",
-    "durationSec": 480,
-    "tags": ["daily-brief"],
-    "hookSrc": "/audio/discover/hooks/morning-edition-june-30-hook.mp3",
-    "description": "Today's top stories in under eight minutes: markets, climate talks, and what happened overnight."
-  },
-  {
-    "id": "discover-002",
-    "segment": "discover",
-    "title": "Evening Roundup: June 29",
-    "creator": "The Daily Brief",
-    "coverArt": "/images/discover/the-daily-brief.jpg",
-    "audioSrc": "/audio/discover/evening-roundup-june-29.mp3",
-    "durationSec": 420,
-    "tags": ["daily-brief"],
-    "hookSrc": "/audio/discover/hooks/evening-roundup-june-29-hook.mp3",
-    "description": "A recap of the day's developments across tech, global affairs, and culture."
-  },
-  {
-    "id": "discover-003",
-    "segment": "discover",
-    "title": "The Age of Quantum Computing",
-    "creator": "Frontiers of Science",
-    "coverArt": "/images/discover/frontiers-of-science.jpg",
-    "audioSrc": "/audio/discover/age-of-quantum-computing.mp3",
-    "durationSec": 1620,
-    "tags": ["science"],
-    "hookSrc": "/audio/discover/hooks/age-of-quantum-computing-hook.mp3",
-    "description": "How qubit stability breakthroughs are reshaping encryption, drug discovery, and logistics."
-  },
-  {
-    "id": "discover-004",
-    "segment": "discover",
-    "title": "Rewilding Europe's Rivers",
-    "creator": "Frontiers of Science",
-    "coverArt": "/images/discover/frontiers-of-science.jpg",
-    "audioSrc": "/audio/discover/rewilding-europes-rivers.mp3",
-    "durationSec": 1440,
-    "tags": ["science"],
-    "hookSrc": "/audio/discover/hooks/rewilding-europes-rivers-hook.mp3",
-    "description": "Field researchers explain what happens when you remove a dam and let the river remember itself."
-  },
-  {
-    "id": "discover-005",
-    "segment": "discover",
-    "title": "Inside the Infrastructure Bill",
-    "creator": "The Policy Wire",
-    "coverArt": "/images/discover/the-policy-wire.jpg",
-    "audioSrc": "/audio/discover/inside-the-infrastructure-bill.mp3",
-    "durationSec": 1980,
-    "tags": ["politics"],
-    "hookSrc": "/audio/discover/hooks/inside-the-infrastructure-bill-hook.mp3",
-    "description": "What's actually in the bill, who benefits, and why implementation is a decade-long problem."
-  },
-  {
-    "id": "discover-006",
-    "segment": "discover",
-    "title": "The Long Shadow of Citizens United",
-    "creator": "The Policy Wire",
-    "coverArt": "/images/discover/the-policy-wire.jpg",
-    "audioSrc": "/audio/discover/the-long-shadow-of-citizens-united.mp3",
-    "durationSec": 2220,
-    "tags": ["politics"],
-    "hookSrc": "/audio/discover/hooks/the-long-shadow-of-citizens-united-hook.mp3",
-    "description": "Fifteen years on: how the ruling reshaped political money, dark donors, and democratic trust."
-  },
-  {
-    "id": "discover-007",
-    "segment": "discover",
-    "title": "The Silk Road's Last Mile",
-    "creator": "Long Arc",
-    "coverArt": "/images/discover/long-arc.jpg",
-    "audioSrc": "/audio/discover/the-silk-roads-last-mile.mp3",
-    "durationSec": 2640,
-    "tags": ["history"],
-    "hookSrc": "/audio/discover/hooks/the-silk-roads-last-mile-hook.mp3",
-    "description": "Tracing the terminal nodes of the ancient trade network and what they became."
-  },
-  {
-    "id": "discover-008",
-    "segment": "discover",
-    "title": "The Year the Web Opened",
-    "creator": "Long Arc",
-    "coverArt": "/images/discover/long-arc.jpg",
-    "audioSrc": "/audio/discover/the-year-the-web-opened.mp3",
-    "durationSec": 2100,
-    "tags": ["history"],
-    "hookSrc": "/audio/discover/hooks/the-year-the-web-opened-hook.mp3",
-    "description": "1993 and the decisions that made the internet public — and permanently changed everything."
-  },
-  {
-    "id": "discover-009",
-    "segment": "discover",
-    "title": "The New Aesthetics of Grief",
-    "creator": "Culture Shift",
-    "coverArt": "/images/discover/culture-shift.jpg",
-    "audioSrc": "/audio/discover/the-new-aesthetics-of-grief.mp3",
-    "durationSec": 1860,
-    "tags": ["culture"],
-    "hookSrc": "/audio/discover/hooks/the-new-aesthetics-of-grief-hook.mp3",
-    "description": "How social media changed what mourning looks like — in public, in art, and in ourselves."
-  },
-  {
-    "id": "discover-010",
-    "segment": "discover",
-    "title": "Brutalism Is Back",
-    "creator": "Culture Shift",
-    "coverArt": "/images/discover/culture-shift.jpg",
-    "audioSrc": "/audio/discover/brutalism-is-back.mp3",
-    "durationSec": 1680,
-    "tags": ["culture"],
-    "hookSrc": "/audio/discover/hooks/brutalism-is-back-hook.mp3",
-    "description": "Architecture critics on the revival of raw concrete aesthetics — and what it says about our moment."
-  }
-]
+{
+  "items": [
+    {
+      "id": "m1",
+      "segment": "music",
+      "title": "Carnaval",
+      "creator": "Alec Koff",
+      "coverArt": "/images/cover-music-1.jpg",
+      "audioSrc": "/audio/music-carnaval.mp3",
+      "durationSec": 180
+    },
+    {
+      "id": "m2",
+      "segment": "music",
+      "title": "All Of My Prices",
+      "creator": "Independent Artist",
+      "coverArt": "/images/cover-music-2.jpg",
+      "audioSrc": "/audio/music-all-of-my-prices.mp3",
+      "durationSec": 210
+    },
+    {
+      "id": "m3",
+      "segment": "music",
+      "title": "Powerful Dramatic",
+      "creator": "ArtMyLife",
+      "coverArt": "/images/cover-music-3.jpg",
+      "audioSrc": "/audio/music-powerful-dramatic.mp3",
+      "durationSec": 195
+    },
+    {
+      "id": "m4",
+      "segment": "music",
+      "title": "Chill Dope Cat",
+      "creator": "Chill FM",
+      "coverArt": "/images/cover-music-4.jpg",
+      "audioSrc": "/audio/music-chill-dope-cat.mp3",
+      "durationSec": 225
+    },
+    {
+      "id": "m5",
+      "segment": "music",
+      "title": "Escape Your Love",
+      "creator": "FaSounds",
+      "coverArt": "/images/cover-music-1.jpg",
+      "audioSrc": "/audio/music-escape-your-love.mp3",
+      "durationSec": 200
+    },
+    {
+      "id": "m6",
+      "segment": "music",
+      "title": "Joyful Rhythm Walk",
+      "creator": "LightBeatsMusic",
+      "coverArt": "/images/cover-music-2.jpg",
+      "audioSrc": "/audio/music-joyful-rhythm.mp3",
+      "durationSec": 185
+    },
+    {
+      "id": "p1",
+      "segment": "podcast",
+      "title": "Seen and Unseen — Episode 444",
+      "creator": "Amit Varma",
+      "coverArt": "/images/cover-podcast-1.jpg",
+      "audioSrc": "/audio/podcast-seen-unseen-e444.mp3",
+      "durationSec": 3600,
+      "description": "Amit Varma explores the unseen consequences of everyday decisions."
+    },
+    {
+      "id": "p2",
+      "segment": "podcast",
+      "title": "Seen and Unseen — Episode 445",
+      "creator": "Amit Varma",
+      "coverArt": "/images/cover-podcast-2.jpg",
+      "audioSrc": "/audio/podcast-seen-unseen-e445.mp3",
+      "durationSec": 3600,
+      "description": "Economics, policy and the ideas that shape modern India."
+    },
+    {
+      "id": "p3",
+      "segment": "podcast",
+      "title": "Seen and Unseen — Episode 446",
+      "creator": "Amit Varma",
+      "coverArt": "/images/cover-podcast-1.jpg",
+      "audioSrc": "/audio/podcast-seen-unseen-e446.mp3",
+      "durationSec": 3600,
+      "description": "First principles thinking applied to India's biggest challenges."
+    },
+    {
+      "id": "c1",
+      "segment": "canvas",
+      "title": "Wonders of the Earth",
+      "creator": "Canvas Studio",
+      "coverArt": "/images/cover-canvas-1.jpg",
+      "audioSrc": "/audio/canvas-wonders-of-earth.mp3",
+      "durationSec": 240,
+      "tags": ["focus"],
+      "description": "Deep focus ambient audio for sustained work."
+    },
+    {
+      "id": "c2",
+      "segment": "canvas",
+      "title": "Acoustic Spring",
+      "creator": "Canvas Studio",
+      "coverArt": "/images/cover-canvas-2.jpg",
+      "audioSrc": "/audio/canvas-acoustic-spring.mp3",
+      "durationSec": 210,
+      "tags": ["calm"],
+      "description": "Gentle acoustic tones for calm and clarity."
+    },
+    {
+      "id": "c3",
+      "segment": "canvas",
+      "title": "Moment of Peace",
+      "creator": "Canvas Studio",
+      "coverArt": "/images/cover-canvas-3.jpg",
+      "audioSrc": "/audio/canvas-moment-of-peace.mp3",
+      "durationSec": 195,
+      "tags": ["wind-down"],
+      "description": "Wind down with peaceful ambient sound."
+    },
+    {
+      "id": "d1",
+      "segment": "discover",
+      "title": "The Daily Brief — AI Unpacked",
+      "creator": "Resonance Originals",
+      "coverArt": "/images/cover-discover-1.jpg",
+      "audioSrc": "/audio/discover-no-copyright.mp3",
+      "durationSec": 720,
+      "hookSrc": "/audio/discover-no-copyright.mp3",
+      "description": "30 seconds in. Stay if it's worth it.",
+      "tags": ["daily-brief", "technology"]
+    },
+    {
+      "id": "d2",
+      "segment": "discover",
+      "title": "India's Economic Crossroads",
+      "creator": "Resonance Originals",
+      "coverArt": "/images/cover-discover-2.jpg",
+      "audioSrc": "/audio/podcast-seen-unseen-e444.mp3",
+      "durationSec": 900,
+      "hookSrc": "/audio/podcast-seen-unseen-e444.mp3",
+      "description": "The story beneath the headline GDP number.",
+      "tags": ["economics", "india"]
+    },
+    {
+      "id": "d3",
+      "segment": "discover",
+      "title": "The Architecture of Cities",
+      "creator": "Resonance Originals",
+      "coverArt": "/images/cover-discover-3.jpg",
+      "audioSrc": "/audio/podcast-seen-unseen-e445.mp3",
+      "durationSec": 840,
+      "hookSrc": "/audio/podcast-seen-unseen-e445.mp3",
+      "description": "Why cities look the way they do — and what it costs us.",
+      "tags": ["history", "culture"]
+    }
+  ]
+}

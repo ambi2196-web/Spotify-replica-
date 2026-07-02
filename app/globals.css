@@ -59,3 +59,79 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+
+/* ── Seekbar & volume slider ───────────────────────────────────────────────── */
+.seek-bar,
+.volume-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 4px;
+  border-radius: 9999px;
+  outline: none;
+}
+
+.seek-bar::-webkit-slider-runnable-track,
+.volume-bar::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    var(--text-primary) 0%,
+    var(--text-primary) var(--progress-pct, 0%),
+    var(--surface-4) var(--progress-pct, 0%),
+    var(--surface-4) 100%
+  );
+}
+
+.seek-bar::-webkit-slider-thumb,
+.volume-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  margin-top: -4px;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.seek-bar:hover::-webkit-slider-thumb,
+.seek-bar:active::-webkit-slider-thumb,
+.volume-bar:hover::-webkit-slider-thumb,
+.volume-bar:active::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+/* Firefox */
+.seek-bar::-moz-range-track,
+.volume-bar::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    var(--text-primary) 0%,
+    var(--text-primary) var(--progress-pct, 0%),
+    var(--surface-4) var(--progress-pct, 0%),
+    var(--surface-4) 100%
+  );
+}
+
+.seek-bar::-moz-range-thumb,
+.volume-bar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  border: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.seek-bar:hover::-moz-range-thumb,
+.seek-bar:active::-moz-range-thumb,
+.volume-bar:hover::-moz-range-thumb,
+.volume-bar:active::-moz-range-thumb {
+  opacity: 1;
+}

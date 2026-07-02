@@ -1,4 +1,5 @@
-import { getBySegment, formatDuration } from "@/lib/catalog";
+import { getBySegment } from "@/lib/catalog";
+import MusicGrid from "@/components/ui/MusicGrid";
 
 export default async function MusicPage() {
   const items = await getBySegment("music");
@@ -19,22 +20,7 @@ export default async function MusicPage() {
         <h2 className="mb-4 text-xl font-bold text-text-primary">
           Your Library
         </h2>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-          {items.map((item) => (
-            <div key={item.id} className="group cursor-pointer">
-              <div
-                className="mb-3 aspect-square w-full rounded-md bg-surface-3 bg-cover bg-center transition-colors group-hover:bg-surface-4"
-                style={{ backgroundImage: `url(${item.coverArt})` }}
-              />
-              <p className="truncate text-sm font-medium text-text-primary">
-                {item.title}
-              </p>
-              <p className="truncate text-xs text-text-secondary">
-                {item.creator} · {formatDuration(item.durationSec)}
-              </p>
-            </div>
-          ))}
-        </div>
+        <MusicGrid items={items} />
       </section>
     </div>
   );
