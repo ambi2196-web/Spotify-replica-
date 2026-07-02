@@ -19,6 +19,15 @@ const navItems = [
   { href: "/discover", label: "Discover", Icon: CompassIcon },
 ] as const;
 
+// Each segment's accent color when active
+const SEGMENT_ACCENT: Record<string, string> = {
+  "/": "#1DB954",
+  "/music": "#1DB954",
+  "/podcast": "#2D9CDB",
+  "/canvas": "#9B59B6",
+  "/discover": "#F2994A",
+};
+
 export default function Sidebar() {
   const pathname = usePathname();
 
@@ -37,6 +46,7 @@ export default function Sidebar() {
         {navItems.map(({ href, label, Icon }) => {
           const active =
             href === "/" ? pathname === "/" : pathname.startsWith(href);
+          const accentColor = active ? (SEGMENT_ACCENT[href] ?? "#1DB954") : undefined;
           return (
             <Link
               key={href}
@@ -49,7 +59,8 @@ export default function Sidebar() {
             >
               <Icon
                 size={22}
-                className={active ? "text-brand" : "text-current"}
+                style={accentColor ? { color: accentColor } : undefined}
+                className={active ? undefined : "text-current"}
               />
               {label}
             </Link>

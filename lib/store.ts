@@ -1,5 +1,3 @@
-"use client";
-
 import { create } from "zustand";
 import type { CatalogItem } from "./types";
 
@@ -10,6 +8,7 @@ interface PlayerState {
   duration: number;
   queue: CatalogItem[];
   volume: number;
+  discoveryMode: "hook" | "depth" | null;
 
   setCurrentItem: (item: CatalogItem) => void;
   togglePlay: () => void;
@@ -20,6 +19,7 @@ interface PlayerState {
   setDuration: (d: number) => void;
   playNext: () => void;
   playPrev: () => void;
+  setDiscoveryMode: (mode: "hook" | "depth" | null) => void;
 }
 
 export const usePlayerStore = create<PlayerState>((set, get) => ({
@@ -29,9 +29,11 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   duration: 0,
   queue: [],
   volume: 0.8,
+  discoveryMode: null,
 
+  // Reset discoveryMode when a non-discover item starts playing
   setCurrentItem: (item) =>
-    set({ currentItem: item, isPlaying: true, currentTime: 0, duration: 0 }),
+    set({ currentItem: item, isPlaying: true, currentTime: 0, duration: 0, discoveryMode: null }),
 
   togglePlay: () => set((s) => ({ isPlaying: !s.isPlaying })),
 
@@ -44,6 +46,8 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   setCurrentTime: (t) => set({ currentTime: t }),
 
   setDuration: (d) => set({ duration: d }),
+
+  setDiscoveryMode: (mode) => set({ discoveryMode: mode }),
 
   playNext: () => {
     const { queue, currentItem } = get();

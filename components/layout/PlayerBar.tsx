@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { usePlayerStore } from "@/lib/store";
 import { formatDuration } from "@/lib/utils";
 import {
@@ -17,12 +17,14 @@ import {
 export default function PlayerBar() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const isSeekingRef = useRef(false);
+  const hookTriggeredRef = useRef(false);
 
   const currentItem = usePlayerStore((s) => s.currentItem);
   const isPlaying = usePlayerStore((s) => s.isPlaying);
   const currentTime = usePlayerStore((s) => s.currentTime);
   const duration = usePlayerStore((s) => s.duration);
   const volume = usePlayerStore((s) => s.volume);
+  const discoveryMode = usePlayerStore((s) => s.discoveryMode);
   const togglePlay = usePlayerStore((s) => s.togglePlay);
   const seek = usePlayerStore((s) => s.seek);
   const setVolume = usePlayerStore((s) => s.setVolume);
@@ -30,6 +32,9 @@ export default function PlayerBar() {
   const setDuration = usePlayerStore((s) => s.setDuration);
   const playNext = usePlayerStore((s) => s.playNext);
   const playPrev = usePlayerStore((s) => s.playPrev);
+  const setDiscoveryMode = usePlayerStore((s) => s.setDiscoveryMode);
+
+  const [showHookBanner, setShowHookBanner] = useState(false);
 
   // Register audio event listeners once on mount
   useEffect(() => {
@@ -61,15 +66,32 @@ export default function PlayerBar() {
     };
   }, [setCurrentTime, setDuration, playNext]);
 
-  // Load + auto-play when track changes
+  // Load + auto-play when track changes; reset hook state
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio || !currentItem) return;
+    hookTriggeredRef.current = false;
+    setShowHookBanner(false);
     audio.src = currentItem.audioSrc;
     audio.play().catch(() =>
       console.warn("[Resonance] Cannot play:", currentItem.audioSrc)
     );
   }, [currentItem?.id]);
+
+  // Hook mechanic: pause at 30s when in discovery hook mode
+  useEffect(() => {
+    if (
+      discoveryMode === "hook" &&
+      currentTime >= 30 &&
+      isPlaying &&
+      !hookTriggeredRef.current
+    ) {
+      hookTriggeredRef.current = true;
+      if (audioRef.current) audioRef.current.pause();
+      togglePlay(); // isPlaying is true → toggles to false
+      setShowHookBanner(true);
+    }
+  }, [currentTime, discoveryMode, isPlaying, togglePlay]);
 
   // Sync play / pause
   useEffect(() => {
@@ -97,8 +119,42 @@ export default function PlayerBar() {
   const progressPct = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <footer className="flex h-[90px] flex-shrink-0 items-center justify-between border-t border-surface-3 bg-surface-2 px-4">
-      <audio ref={audioRef} preload="metadata" />
+    <>
+      {/* Hook-to-depth banner — floats above the player bar */}
+      {showHookBanner && (
+        <div className="fixed inset-x-0 bottom-[90px] z-50 flex items-center justify-between border-t border-[#F2994A]/30 bg-surface-base/95 px-6 py-3 backdrop-blur">
+          <div>
+            <p className="text-sm font-semibold text-text-primary">
+              Worth going deeper?
+            </p>
+            <p className="text-xs text-text-secondary">{currentItem?.title}</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => {
+                setShowHookBanner(false);
+                setDiscoveryMode(null);
+              }}
+              className="text-xs text-text-muted transition-colors hover:text-text-primary"
+            >
+              Skip
+            </button>
+            <button
+              onClick={() => {
+                setShowHookBanner(false);
+                setDiscoveryMode("depth");
+                togglePlay(); // isPlaying is false → toggles to true, resumes from 30s
+              }}
+              className="rounded-full bg-[#F2994A] px-4 py-1.5 text-sm font-semibold text-black transition-colors hover:bg-[#e8883a]"
+            >
+              Listen in Full
+            </button>
+          </div>
+        </div>
+      )}
+
+      <footer className="flex h-[90px] flex-shrink-0 items-center justify-between border-t border-surface-3 bg-surface-2 px-4">
+        <audio ref={audioRef} preload="metadata" />
 
       {/* Left: track info */}
       <div className="flex w-[30%] items-center gap-3">
@@ -222,5 +278,6 @@ export default function PlayerBar() {
         />
       </div>
     </footer>
+    </>
   );
 }
